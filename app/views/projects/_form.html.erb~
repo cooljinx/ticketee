@@ -1,4 +1,7 @@
 <%= form_for(@project) do |f| %>
+
+	<%= render "error_messages", :object => f.object %>
+
 	<p>
 		<%= f.label :name %>
 		<%= f.text_field :name %>
