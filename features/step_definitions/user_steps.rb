@@ -6,3 +6,8 @@ Given /^there are the following users:$/ do |table|
 		@user.confirm! unless unconfirmed
 	end
 end
+
+Given /^I am signed in as "([^"]*)"$/ do |email|
+  @user = User.find_by_email!(email)
+	steps("Given I am signed in as them")
+end
