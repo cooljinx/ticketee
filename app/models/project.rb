@@ -10,4 +10,8 @@ class Project < ActiveRecord::Base
 		:user_id => user.id })
 	}
 
+	def self.for(user)
+		user.admin? ? Project : Project.readable_by(user)
+	end
+
 end
